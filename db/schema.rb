@@ -10,17 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 0) do
-=======
 ActiveRecord::Schema.define(version: 2019_05_27_131643) do
->>>>>>> 712a192a27e5a17dd3fe593839f85b331b98f4b9
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-=======
   create_table "carts", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -77,5 +71,4 @@ ActiveRecord::Schema.define(version: 2019_05_27_131643) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
->>>>>>> 712a192a27e5a17dd3fe593839f85b331b98f4b9
 end
