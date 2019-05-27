@@ -1,0 +1,11 @@
+<h2>Voici la liste des produits :</h2>
+
+<div class='card-columns'>
+	<% @items.each do |item| %>
+		<div class="card bg-secondary" style="width: 22rem;">
+		  <div class="card-body">
+		    <h5 class="card-title"><a class="text-warning"><%= link_to item.title.upcase , item_path(item.id)%></a></h5>
+		  </div>
+		</div>
+	 <% end %>
+</div>
