@@ -1,35 +1,67 @@
 # README
 
-PROTOCOLE DU SOIR : 
+## Protocole du soir 
 
-```$ git checkout dev-tonnom```
+```
+$ git checkout dev-tonnom
+```
 
- => #Branch DEV-TONNOM
-```$ git merge [les branches perso de travail de ta journée]```
-```$ git push origin dev-tonnom```
-```$ git checkout development```
+ ### => #Branch DEV-TONNOM
+```
+$ git merge [les branches perso de travail de ta journée]
+```
+```
+$ git push origin dev-tonnom
+```
+```
+$ git checkout development
+```
 
-=> #Branch DEVELOPMENT
-```$ git merge dev-tonnom```
-```$ git push origin development```
-```$ git checkout master```
+### => #Branch DEVELOPMENT
+```
+$ git merge dev-tonnom
+```
+```
+$ git push origin development
+```
+```
+$ git checkout master
+```
 
-=> #Branch MASTER
-```$ git merge development```
-```$ git push origin master```
-```$ git push heroku master```
+### => #Branch MASTER
+```
+$ git merge development
+```
+```
+$ git push origin master
+```
+```
+$ git push heroku master
+```
 
-PROTOCOLE DU MATIN : 
+## Protocole du matin  
 
-```$ git checkout master```
+```
+$ git checkout master
+```
 
-=> #Branch MASTER  
-```$ git pull origin master```
-```$ git checkout development```
+### => #Branch MASTER  
+```
+$ git pull origin master
+```
+```
+$ git checkout development
+```
 
-=> #Branch DEVELOPMENT 
-```$ git merge master```
-```$ git checkout dev-tonnom```
+### => #Branch DEVELOPMENT 
+```
+$ git merge master
+```
+```
+$ git checkout dev-tonnom
+```
 
-=> #Branch DEV-TONNOM
-```$ git merge master```
+### => #Branch DEV-TONNOM
+```
+$ git merge master
+```
