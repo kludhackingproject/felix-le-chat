@@ -1,7 +1,8 @@
 class Cart < ApplicationRecord
-    has_one :user
+    belongs_to :user
     has_many :join_table_cart_items
     has_many :items, through: :join_table_cart_items
 
-    validates :user_id, presence: true
+    validates :user_id, presence: true, uniqueness: true
+
 end
