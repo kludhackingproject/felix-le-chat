@@ -4,8 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+<<<<<<< HEAD
   # has_one: :cart
   # has_many: :orders
+=======
+  has_one: :cart
+  has_many: :orders
+>>>>>>> dev-vincent
 
   validates :first_name, presence: true, length: { in: 0..20 }
   validates :last_name, presence: true, length: { in: 0..20 }
