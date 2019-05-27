@@ -1,24 +1,67 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Protocole du soir 
 
-Things you may want to cover:
+```
+$ git checkout dev-tonnom
+```
 
-* Ruby version
+ ### => #Branch DEV-TONNOM
+```
+$ git merge [les branches perso de travail de ta journée]
+```
+```
+$ git push origin dev-tonnom
+```
+```
+$ git checkout development
+```
 
-* System dependencies
+### => #Branch DEVELOPMENT
+```
+$ git merge dev-tonnom
+```
+```
+$ git push origin development
+```
+```
+$ git checkout master
+```
 
-* Configuration
+### => #Branch MASTER
+```
+$ git merge development
+```
+```
+$ git push origin master
+```
+```
+$ git push heroku master
+```
 
-* Database creation
+## Protocole du matin  
 
-* Database initialization
+```
+$ git checkout master
+```
 
-* How to run the test suite
+### => #Branch MASTER  
+```
+$ git pull origin master
+```
+```
+$ git checkout development
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### => #Branch DEVELOPMENT 
+```
+$ git merge master
+```
+```
+$ git checkout dev-tonnom
+```
 
-* Deployment instructions
-
-* ...
+### => #Branch DEV-TONNOM
+```
+$ git merge master
+```
