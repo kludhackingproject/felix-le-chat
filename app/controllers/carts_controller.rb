@@ -1,12 +1,6 @@
 class CartsController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user!
 
-  def authenticate_user
-    unless logged_in?
-      flash[:danger] = "Veuillez vous authentifier"
-      redirect_to new_session_path
-    end
-  end
 
 # pas besoin, un seul panier par personne
   def index
@@ -14,7 +8,8 @@ class CartsController < ApplicationController
 
 # panier avec tous les items, lié au user_id
   def show
-    @cart = Cart.items
+    @cart = Cart.find(params[:id])
+    @cart_items = @cart.items
   end
 
 # vider le panier pour passer commande
@@ -45,11 +40,12 @@ class CartsController < ApplicationController
 
 # calculer le total du panier en additionant le prix des items
   def calculate_total
+    @cart = Cart.find(params[:id])
     cart_price = 0
     # boucle pour incrémenter la valeur de price à chaque item ajouté
     # chercher le nombre d'items du panier
     @cart.items.each do |item|
-      cart_price += item_price
+      cart_price += item.price
     end
   end
 
