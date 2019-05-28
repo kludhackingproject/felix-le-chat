@@ -26,10 +26,6 @@
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
                 <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item submenu dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Shop</a>
-                </li>
 
                 <li class="nav-item submenu dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -42,14 +38,17 @@
                       <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %></li>
                       <li class="nav-item"><%= link_to "Sign in", new_user_session_path, class: 'nav-link' %></li>
                     <% end %>
+                    
                   </ul>
                 </li>
               </ul>
 
+              <% if current_user %>
               <ul class="nav-shop">
-                <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
-                <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li>
+                <li class="nav-item"><button><%= link_to '<i class="ti-shopping-cart"></i><span class="nav-shop__circle">x</span>'.html_safe, item_path(:id => 5)%></button></li>
+                <li class="nav-item"><%= link_to 'Buy Now', item_path(:id => 5), class:"button button-header" %></li>
               </ul>
+              <% end %>
             </div>
           </div>
         </nav>
@@ -73,11 +72,10 @@
               <div class="single-footer-widget tp_widgets">
                 <h4 class="footer_title large_title">Our Mission</h4>
                 <p>
-                  So seed seed green that winged cattle in. Gathering thing made fly you're no
-                  divided deep moved us lan Gathering thing us land years living.
+                Le Chat domestique (Felis silvestris catus) est la sous-espèce issue de la domestication du Chat sauvage, mammifère carnivore de la famille des Félidés.
                 </p>
                 <p>
-                  So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved
+                  Achetez des photos de chats, vous serez heureux.
                 </p>
               </div>
             </div>
@@ -87,7 +85,6 @@
                 <ul class="list">
                   <li><a href="#">Home</a></li>
                   <li><a href="#">Shop</a></li>
-                  <li><a href="#">Blog</a></li>
                   <li><a href="#">Product</a></li>
                   <li><a href="#">Brand</a></li>
                   <li><a href="#">Contact</a></li>
@@ -115,24 +112,23 @@
                     <span class="fa fa-location-arrow"></span>
                     Head Office
                   </p>
-                  <p>123, Main Street, Your City</p>
+                  <p>Felicità</p>
 
                   <p class="sm-head">
                     <span class="fa fa-phone"></span>
                     Phone Number
                   </p>
                   <p>
-                    +123 456 7890 <br>
-                    +123 456 7890
+                  On Slack
                   </p>
-
+            
                   <p class="sm-head">
                     <span class="fa fa-envelope"></span>
                     Email
                   </p>
                   <p>
-                    free@infoexample.com <br>
-                    www.infoexample.com
+                    somewheretogo@project.com <br>
+                    www.somewheretogo.com
                   </p>
                 </div>
               </div>
