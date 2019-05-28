@@ -71,6 +71,7 @@
                         <h5>Total du panier</h5>
                     </td>
                     <td>
+											<%= number_to_currency(@cart.sub_total, :unit=>'€') %>
                     </td>
                 </tr>
 

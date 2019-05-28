@@ -32,11 +32,6 @@
                     aria-expanded="false">Shop</a>
                 </li>
 
-                <% if user_signed_in? %>
-                  <li class="nav-item"><%= link_to 'cart', cart_path(:id => cart_id), class: 'nav-link' %></li>
-                <% else %>
-                  <li class="nav-item"><%= link_to 'cart', new_user_session_path, class: 'nav-link' %></li>
-                <% end %>
                 <li class="nav-item submenu dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                     aria-expanded="false">Conect</a>
@@ -48,17 +43,19 @@
                       <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %></li>
                       <li class="nav-item"><%= link_to "Sign in", new_user_session_path, class: 'nav-link' %></li>
                     <% end %>
-
                   </ul>
                 </li>
               </ul>
 
-              <% if current_user %>
               <ul class="nav-shop">
-                <li class="nav-item"><button><%= link_to '<i class="ti-shopping-cart"></i><span class="nav-shop__circle">x</span>'.html_safe, cart_path(:id => 7)%></button></li>
-                <li class="nav-item"><%= link_to 'Buy Now', cart_path(:id => 7), class:"button button-header" %></li>
+                <% if user_signed_in? %>
+                  <li class="nav-item"><button><%= link_to '<i class="ti-shopping-cart"></i><span class="nav-shop__circle">x</span>'.html_safe, cart_path(:id => cart_id) %></button></li>
+                  <li class="nav-item"><%= link_to 'Buy Now', cart_path(:id => cart_id), class:"button button-header" %></li>
+                <% else %>
+                  <li class="nav-item"><button><%= link_to '<i class="ti-shopping-cart"></i><span class="nav-shop__circle">x</span>'.html_safe, new_user_session_path %></button></li>
+                  <li class="nav-item"><%= link_to 'Buy Now', new_user_session_path, class:"button button-header" %></li>
+                <% end %>
               </ul>
-              <% end %>
             </div>
           </div>
         </nav>
