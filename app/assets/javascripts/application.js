@@ -14,3 +14,12 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+//= require jquery/jquery-3.2.1.min
+//= require bootstrap/bootstrap.bundle.min
+//= require skrollr.min
+//= require owl-carousel/owl.carousel.min
+//= require nice-select/jquery.nice-select.min
+//= require jquery.ajaxchimp.min
+//= require mail-script
+//= require main
