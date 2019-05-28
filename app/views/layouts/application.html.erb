@@ -9,6 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+<body>
    <!--================ Begin Header Menu Area =================-->
   <header class="header_area">
       <div class="main_menu">
@@ -49,7 +50,11 @@
     </header>
   <!--================ End Header Menu Area =================-->
 
-  <body>
+     <!-- alerts from devise -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
 
 <!--================ Start footer Area  =================-->  
     <footer class="footer">
@@ -140,12 +145,5 @@
       </div>
     </footer>
 <!--================ Start footer Area  =================-->  
-
-
-    <!-- alerts from devise -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
   </body>
 </html>
