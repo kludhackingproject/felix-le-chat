@@ -6,9 +6,9 @@ class UserMailer < ApplicationMailer
       @user = user 
   
       #on définit une variable @url qu'on utilisera dans la view d’e-mail
-      @url  = 'http://monsite.fr/login' 
+      @url  = 'projet-felix-le-chat.herokuapp.com/login' 
   
-      # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
+      #c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
       mail(to: @user.email, subject: 'Bienvenue chez Felix Le Chat !') 
     end
 
@@ -17,5 +17,5 @@ class UserMailer < ApplicationMailer
         @order = order
         @item = item
         mail(to: @user.email, subject: 'La commande a été reçue')
-      end
+    end
 end
