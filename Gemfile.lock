@@ -110,7 +110,11 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.7.0)
       launchy (~> 2.2)
+<<<<<<< HEAD
+    libv8 (7.3.492.27.1-x86_64-linux)
+=======
     libv8 (7.3.492.27.1)
+>>>>>>> 3f5fb3442c4a99cabfedc4e058d5cbc74985d561
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
