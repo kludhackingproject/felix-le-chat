@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def cart_id
-    Cart.where(user_id: current_user).first.id
+    if user_signed_in?
+      Cart.where(user_id: current_user).first.id
+    end
   end
 end

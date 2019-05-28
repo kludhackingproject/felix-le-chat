@@ -32,7 +32,11 @@
                     aria-expanded="false">Shop</a>
                 </li>
 
-                <li class="nav-item"><%= link_to 'cart', cart_path(:id => cart_id), class: 'nav-link' %></li>
+                <% if user_signed_in? %>
+                  <li class="nav-item"><%= link_to 'cart', cart_path(:id => cart_id), class: 'nav-link' %></li>
+                <% else %>
+                  <li class="nav-item"><%= link_to 'cart', new_user_session_path, class: 'nav-link' %></li>
+                <% end %>
                 <li class="nav-item submenu dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                     aria-expanded="false">Conect</a>
