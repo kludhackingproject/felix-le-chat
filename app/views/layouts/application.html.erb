@@ -9,6 +9,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <body>
+
    <!--================ Begin Header Menu Area =================-->
   <header class="header_area">
       <div class="main_menu">
@@ -28,12 +30,18 @@
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                     aria-expanded="false">Shop</a>
                 </li>
+
                 <li class="nav-item submenu dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                     aria-expanded="false">Conect</a>
                   <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Log in</a></li>
-                    <li class="nav-item"><a class="nav-link" href="single-blog.html">Sign in</a></li>
+                    <% if current_user %>
+                      <li class="nav-item"><%= link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link' %></li>
+                      <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+                    <% else %>
+                      <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %></li>
+                      <li class="nav-item"><%= link_to "Sign in", new_user_session_path, class: 'nav-link' %></li>
+                    <% end %>
                   </ul>
                 </li>
               </ul>
@@ -49,9 +57,14 @@
     </header>
   <!--================ End Header Menu Area =================-->
 
-  <body>
+  <!-- alerts from devise -->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-<!--================ Start footer Area  =================-->  
+  <!-- Centent -->
+  <%= yield %>
+
+<!--================ Start footer Area  =================-->
     <footer class="footer">
       <div class="footer-area">
         <div class="container">
@@ -60,11 +73,11 @@
               <div class="single-footer-widget tp_widgets">
                 <h4 class="footer_title large_title">Our Mission</h4>
                 <p>
-                  So seed seed green that winged cattle in. Gathering thing made fly you're no 
+                  So seed seed green that winged cattle in. Gathering thing made fly you're no
                   divided deep moved us lan Gathering thing us land years living.
                 </p>
                 <p>
-                  So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved 
+                  So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved
                 </p>
               </div>
             </div>
@@ -103,7 +116,7 @@
                     Head Office
                   </p>
                   <p>123, Main Street, Your City</p>
-    
+
                   <p class="sm-head">
                     <span class="fa fa-phone"></span>
                     Phone Number
@@ -112,7 +125,7 @@
                     +123 456 7890 <br>
                     +123 456 7890
                   </p>
-    
+
                   <p class="sm-head">
                     <span class="fa fa-envelope"></span>
                     Email
@@ -133,19 +146,12 @@
           <div class="row d-flex">
             <p class="col-lg-12 footer-text text-center">
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
       </div>
     </footer>
-<!--================ Start footer Area  =================-->  
-
-
-    <!-- alerts from devise -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
+<!--================ End footer Area  =================-->
   </body>
 </html>
