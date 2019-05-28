@@ -85,8 +85,8 @@
                               </td>
                               <td>
                                   <div class="checkout_btn_inner d-flex align-items-center">
-                                      <a class="gray_btn" href="#">Continuer mes achats</a>
-                                      <a class="primary-btn ml-2" href="#">Terminer ma commande</a>
+                                      <%= link_to "Continuer mes achats", items_path, class:"gray_btn" %>
+                                      <%= link_to "Passer commande", orders_path, class:"primary-btn ml-2", data: {:method => "create"} %>
                                   </div>
                               </td>
                           </tr>
@@ -97,4 +97,4 @@
       </div>
   </section>
 
-  <!--================ End Cart Area =================-->
+  <!--================ End Cart Area =================--

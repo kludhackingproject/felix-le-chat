@@ -45,8 +45,8 @@
 
               <% if current_user %>
               <ul class="nav-shop">
-                <li class="nav-item"><button><%= link_to '<i class="ti-shopping-cart"></i><span class="nav-shop__circle">x</span>'.html_safe, item_path(:id => 5)%></button></li>
-                <li class="nav-item"><%= link_to 'Buy Now', item_path(:id => 5), class:"button button-header" %></li>
+                <li class="nav-item"><button><%= link_to '<i class="ti-shopping-cart"></i><span class="nav-shop__circle">x</span>'.html_safe, cart_path(:id => 7)%></button></li>
+                <li class="nav-item"><%= link_to 'Buy Now', cart_path(:id => 7), class:"button button-header" %></li>
               </ul>
               <% end %>
             </div>
