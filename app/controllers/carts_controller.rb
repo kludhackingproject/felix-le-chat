@@ -6,37 +6,34 @@ class CartsController < ApplicationController
   def index
   end
 
-# panier avec tous les items, lié au user_id
-  def show
-    @cart = Cart.find(params[:id])
-    @cart_items = @cart.items
-  end
-
-# vider le panier pour passer commande
-  def destroy
-    Cart.find(params[:id]).destroy
-    flash[:success] = "Panier vidé !"
-    redirect_to order_show_path
-  end
-
   def new
     @cart = Cart.new
   end
 
-  def create
+# panier avec tous les items, lié au user_id
+  def show
+    @cart = Cart.find(cart_id)
+    @cart_items = @cart.items
   end
 
-# cherche l'item dans le panier
+  def create
+
+  end
+
+  # cherche l'item dans le panier
   def edit
-    @item = Item.find(params[:id])
+
+  end
+
+# vider le panier pour passer commande
+  def destroy
+
   end
 
 # supprimer l'item sélectionné dans le panier
 # méthode .delete, chercher l'id du produit lié au bouton "supprimer" cliqué
   def update
-    # 
   end
-
 
 # calculer le total du panier en additionant le prix des items
   def calculate_total
