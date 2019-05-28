@@ -1,0 +1,2 @@
+module DestroyCartItemsHelper
+end

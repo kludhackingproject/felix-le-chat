@@ -4,5 +4,4 @@ class Cart < ApplicationRecord
     has_many :items, through: :join_table_cart_items
 
     validates :user_id, presence: true, uniqueness: true
-
 end
