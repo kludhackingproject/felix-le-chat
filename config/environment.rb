@@ -6,11 +6,11 @@ Rails.application.initialize!
 
 #ActionMailer MailJet
 ActionMailer::Base.smtp_settings = {
-  :user_name => ENV['MAILJET_LOGIN'],
-  :password => ENV['MAILJET_PWD'],
+  :user_name => ENV['API key'],
+  :password => ENV['API secret'],
   :domain => 'https://projet-felix-le-chat.herokuapp.com',
   :address => 'smtp.sendgrid.net',
-  :port => 465,
+  :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true
 }
