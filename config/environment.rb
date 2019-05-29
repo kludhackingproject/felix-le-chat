@@ -5,12 +5,9 @@ require_relative 'application'
 Rails.application.initialize!
 
 #ActionMailer MailJet
-ActionMailer::Base.smtp_settings = {
-  :user_name => ENV['API key'],
-  :password => ENV['API secret'],
-  :domain => 'https://projet-felix-le-chat.herokuapp.com',
-  :address => 'smtp.sendgrid.net',
-  :port => 587,
-  :authentication => :plain,
-  :enable_starttls_auto => true
-}
+Mailjet.configure do |config|
+  config.api_key = ENV['MJ_APIKEY_PUBLIC']
+  config.secret_key = ENV['MJ_APIKEY_PRIVATE']  
+  config.api_version = "v3.1"
+  config.end_point = "https://api.us.mailjet.com"
+end
