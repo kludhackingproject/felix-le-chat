@@ -93,7 +93,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # initialize action mailer to true
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_deliveries = false
 
   # Defautl send mailer
   config.action_mailer.default_url_options = { host: 'projet-felix-le-chat.herokuapp.com' }
