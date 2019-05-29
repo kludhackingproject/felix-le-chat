@@ -16,19 +16,11 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "email adress please" }
 
   private
-  
+
   # Envoyer un e-mail à l'utilisateur lors de la création de son compte
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
-
-  # Envoyer un e-mail à l'utilisateur lors de la validation d'une commande
-  after_create :order_send
-
-  def order_send
-    UserMailer.order_confirmation(self, order).deliver
-  end
-
   # Créer un Cart lors de la création d'un utilisateur
   def create_cart
     Cart.create(user_id: self.id)
