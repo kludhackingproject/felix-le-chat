@@ -5,7 +5,7 @@
 			<div class="blog-banner">
 				<div class="text-center">
 					<h1>Panier</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">		
+					<nav aria-label="breadcrumb" class="banner-breadcrumb">
        				</nav>
 				</div>
 			</div>
@@ -17,84 +17,86 @@
 	<!--================= Start Cart Area =================-->
 
 	<section class="cart_area">
-      <div class="container">
-          <div class="cart_inner">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th scope="col">Produit</th>
-                              <th scope="col">Catégorie</th>
-                              <th scope="col">Supprimer du panier</th>
-                              <th scope="col">Total</th>
-                          </tr>
-                      </thead>
-                      <tbody>
+    <div class="container">
+      <div class="cart_inner">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                  <th scope="col">Produit</th>
+                  <th scope="col">Catégorie</th>
+                  <th scope="col">Supprimer du panier</th>
+                  <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
 
-                        <% @cart_items.each do |item| %>
-                          <tr>
-                              <td>
-                                  <div class="media">
-                                      <div class="d-flex">
-                                          <img src="img/cart/cart1.png" alt="">
-                                      </div>
-                                      <div class="media-body">
-                                          <p><%= item.title %></p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>Chaton</h5>
-                              </td>
-                              <td>
-                                  <div class="product_count">
-                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-                                      <button onclick="if (!window.__cfRLUnblockHandlers) return false; var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;" class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                      <button onclick="if (!window.__cfRLUnblockHandlers) return false; var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5><%= item.price %></h5>
-                              </td>
-                          </tr>
-                        <% end %>
+              <% @cart_items.each do |item| %>
+                <tr>
+                  <td>
+                  	<div class="media">
+                      <div class="d-flex">
+                          <img src="img/cart/cart1.png" alt="">
+                      </div>
+                      <div class="media-body">
+                          <p><%= item.title %></p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                      <h5>Chaton</h5>
+                  </td>
+                  <td>
 
-                          <tr>
-                              <td>
+                  </td>
+                  <td>
+                      <h5><%= item.price %></h5>
+                  </td>
+									<td>
+										<div class="checkout_btn_inner d-flex align-items-center">
+											<%= link_to "suprimer", destroy_cart_item_path(:id => item.id), method: "DELETE", class:"btn btn-danger" %>
+										</div>
+									</td>
+                </tr>
+              <% end %>
 
-                              </td>
-                              <td>
+                <tr>
+                    <td>
 
-                              </td>
-                              <td>
-                                  <h5>Total du panier</h5>
-                              </td>
-                              <td>
-                              </td>
-                          </tr>
+                    </td>
+                    <td>
 
-                          <tr class="out_button_area">
-                              <td class="d-none-l">
+                    </td>
+                    <td>
+                        <h5>Total du panier</h5>
+                    </td>
+                    <td>
+											<%= number_to_currency(@cart.sub_total, :unit=>'€') %>
+                    </td>
+                </tr>
 
-                              </td>
-                              <td class="">
+                <tr class="out_button_area">
+                    <td class="d-none-l">
 
-                              </td>
-                              <td>
+                    </td>
+                    <td class="">
 
-                              </td>
-                              <td>
-                                  <div class="checkout_btn_inner d-flex align-items-center">
-                                      <a class="gray_btn" href="#">Continuer mes achats</a>
-                                      <a class="primary-btn ml-2" href="#">Terminer ma commande</a>
-                                  </div>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        <div class="checkout_btn_inner d-flex align-items-center">
+                            <a class="gray_btn" href="#">Continuer mes achats</a>
+                            <a class="primary-btn ml-2" href="#">Terminer ma commande</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+    </div>
   </section>
 
   <!--================ End Cart Area =================-->

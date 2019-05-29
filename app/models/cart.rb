@@ -5,4 +5,11 @@ class Cart < ApplicationRecord
 
     validates :user_id, presence: true, uniqueness: true
 
+    def sub_total
+      sum = 0
+      self.items.each do |item|
+        sum += item.price
+      end
+    return sum
+  end
 end

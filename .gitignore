@@ -28,3 +28,6 @@
 
 # Ignore Gemfile.lock
 Gemfile.lock
+
+# Ignore .env
+.env
