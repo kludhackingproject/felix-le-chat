@@ -27,10 +27,6 @@
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
                 <li class="nav-item active"><%= link_to 'Home', root_path, class: 'nav-link' %></li>
-                <li class="nav-item submenu dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Shop</a>
-                </li>
 
                 <li class="nav-item submenu dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -49,7 +45,7 @@
 
               <ul class="nav-shop">
                 <% if user_signed_in? %>
-                  <li class="nav-item"><button><%= link_to '<i class="ti-shopping-cart"></i><span class="nav-shop__circle">x</span>'.html_safe, cart_path(:id => cart_id) %></button></li>
+                  <li class="nav-item"><button><%= link_to "<i class='ti-shopping-cart'></i><span class='nav-shop__circle'>#{current_cart.items.length}</span>".html_safe, cart_path(:id => cart_id) %></button></li>
                   <li class="nav-item"><%= link_to 'Buy Now', cart_path(:id => cart_id), class:"button button-header" %></li>
                 <% else %>
                   <li class="nav-item"><button><%= link_to '<i class="ti-shopping-cart"></i><span class="nav-shop__circle">x</span>'.html_safe, new_user_session_path %></button></li>

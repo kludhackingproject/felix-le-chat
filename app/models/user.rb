@@ -21,7 +21,7 @@ class User < ApplicationRecord
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
-
+  
   # Créer un Cart lors de la création d'un utilisateur
   def create_cart
     Cart.create(user_id: self.id)
