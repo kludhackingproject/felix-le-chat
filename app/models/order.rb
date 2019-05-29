@@ -7,8 +7,10 @@ class Order < ApplicationRecord
 
     validates :user_id, presence: true
 
-    ## Envoyer un e-mail à l'utilisateur lors de la validation d'une commande
-    # def order_send
-    #   UserMailer.order_confirmation(self, order).deliver
-    # end
+      # Envoyer un e-mail à l'utilisateur lors de la validation d'une commande
+  #after_create :order_send
+
+  #def order_send
+   # UserMailer.order_confirmation(self).deliver
+  #end
 end
