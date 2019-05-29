@@ -14,7 +14,6 @@ class UserMailer < ApplicationMailer
 
     def order_confirmation(user)
         @user = user
-        @item = item
         mail(to: @user.email, subject: 'La commande a été reçue')
     end
 end
