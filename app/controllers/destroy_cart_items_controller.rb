@@ -1,12 +1,8 @@
 class DestroyCartItemsController < ApplicationController
 
   def create
-    @addingitem = JoinTableCartItem.new(cart_id: Cart.find(cart_id), item_id: params[:id])
-  
-    if @addingitem.save
-      render "/"
-    end 
-
+    @cart = Cart.find(cart_id)
+    @cart.items << Item.find(params[:id])
   end 
 
   

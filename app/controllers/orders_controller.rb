@@ -9,16 +9,11 @@ class OrdersController < ApplicationController
     end 
 
     def create
-        @order = Order.new(user_id: current_user.id)
+        @order = Order.create(user_id: current_user.id)
         
         current_cart = Cart.find(cart_id).items
         current_cart.each do |item|
-            JoinTableOrderItem.create(order_id: self.id, item_id: item.id)
-        end
-
-        if @order.save
-            redirect_to items_path
-            current_cart.destroy_all 
+            JoinTableOrderItem.create(order_id: @order.id, item_id: item.id)
         end
 
     end
