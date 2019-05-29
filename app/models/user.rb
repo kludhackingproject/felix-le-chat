@@ -26,7 +26,7 @@ class User < ApplicationRecord
   after_create :order_send
 
   def order_send
-    UserMailer.order_confirmation(self, order).deliver
+    UserMailer.order_confirmation(self).deliver
   end
 
   # Créer un Cart lors de la création d'un utilisateur

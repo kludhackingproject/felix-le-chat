@@ -12,7 +12,7 @@ class UserMailer < ApplicationMailer
       mail(to: @user.email, subject: 'Bienvenue chez Felix Le Chat !') 
     end
 
-    def order_confirmation(user, order)
+    def order_confirmation(user)
         @user = user
         @order = order
         @item = item
