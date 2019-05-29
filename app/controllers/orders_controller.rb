@@ -9,16 +9,18 @@ class OrdersController < ApplicationController
     end 
 
     def create
-        @order = Order.new(user_id: 19)
-        current_cart = Cart.find(5)
-        items = current_cart.items
-        @order.items = items
+        @order = Order.new(user_id: current_user.id)
+        
+        current_cart = Cart.find(cart_id).items
+        current_cart.each do |item|
+            JoinTableOrderItem.create(order_id: self.id, item_id: item.id)
+        end
+
         if @order.save
             redirect_to items_path
-            alert[:success] = "Votre commande a bien été enregistré"
-        else 
-            render cart_path(:id => 7)
+            current_cart.destroy_all 
         end
+
     end
 
     def edit 
