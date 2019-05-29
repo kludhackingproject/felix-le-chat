@@ -21,14 +21,7 @@ class User < ApplicationRecord
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
-
-  # Envoyer un e-mail à l'utilisateur lors de la validation d'une commande
-  after_create :order_send
-
-  def order_send
-    UserMailer.order_confirmation(self).deliver
-  end
-
+  
   # Créer un Cart lors de la création d'un utilisateur
   def create_cart
     Cart.create(user_id: self.id)
