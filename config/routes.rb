@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :destroy_cart_items, only: [:destroy, :create]
   resources :profiles, only: [:show]
 
+
 end
