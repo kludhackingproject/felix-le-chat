@@ -42,7 +42,8 @@
                 <ul class="card-product__imgOverlay">
                   <li><button><%= link_to '<i class="ti-search"></i>'.html_safe, item_path(item.id) %></button></li>
                   <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
+                  <li><button><%= link_to '<i class="ti-shopping-cart"></i>'.html_safe,  destroy_cart_items_path, data: {:method => "create"} %></button>
+                  </li>                
                 </ul>
               </div>
               <div class="card-body">

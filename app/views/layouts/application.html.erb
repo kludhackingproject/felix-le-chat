@@ -26,15 +26,11 @@
             </button>
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                <li class="nav-item active"><%= link_to 'Home', root_path, class: 'nav-link' %></li>
+                <li class="nav-item active"><%= link_to 'Home', root_path, class: 'nav-link' %></li>            
+                
                 <li class="nav-item submenu dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Shop</a>
-                </li>
-
-                <li class="nav-item submenu dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Conect</a>
+                    aria-expanded="false">Connect</a>
                   <ul class="dropdown-menu">
                     <% if current_user %>
                       <li class="nav-item"><%= link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link' %></li>
@@ -62,7 +58,6 @@
       </div>
     </header>
   <!--================ End Header Menu Area =================-->
-
 
      <!-- alerts from devise -->
     <p class="notice"><%= notice %></p>

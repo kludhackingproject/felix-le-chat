@@ -17,7 +17,7 @@ class CartsController < ApplicationController
   end
 
   def create
-
+    @addingitem = JoinTableCartItem.add(LineItem.new(cart_id: Cart.find(cart_id), item_id: params[:id]))
   end
 
   # cherche l'item dans le panier

@@ -33,11 +33,9 @@
             <li><a href="#"><span>Availibility</span> : In Stock</a></li>
           </ul>
           <p> <%= @item.description %> </p>
-          <div class="product_count">
-            <label for="qty">Quantity:</label>
-            <input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-            <a class="button primary-btn" href="#">Add to Cart</a>               
-          </div>
+
+        <div class="checkout_btn_inner d-flex align-items-center">
+            <%= link_to 'Ajouter au panier', destroy_cart_items_path, method: "CREATE", class:"button primary-btn" %>   
         </div>
       </div>
     </div>
