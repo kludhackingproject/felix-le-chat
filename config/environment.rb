@@ -5,10 +5,10 @@ require_relative 'application'
 Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-    :user_name => ENV['MJ_APIKEY_PUBLIC'],
-    :password => ENV['MJ_APIKEY_PRIVATE'],
-    :domain => 'https://projet-felix-le-chat.herokuapp.com',
-    :address => 'in-v3.mailjet.com',
+    :user_name => ENV['SENDGRID_LOGIN'],
+    :password => ENV['SENDGRID_PWD'],
+    :domain => 'https://projet-felix-le-chat.herokuapp.com/',
+    :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true

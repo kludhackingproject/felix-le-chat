@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 gem 'faker'
-gem 'dotenv-rails'
 gem 'table_print'
 gem 'pry'
 gem 'rspec'
@@ -11,8 +10,12 @@ gem 'better_errors'
 gem 'letter_opener'
 gem 'stripe'
 gem 'devise'
+<<<<<<< HEAD
 gem 'aws-sdk-s3', require: false
 gem 'mailjet'
+=======
+gem 'dotenv-rails'
+>>>>>>> dev-antoine
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :create_cart, :welcome_send#, :admin_send
+  after_create :create_cart, :welcome_send
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
