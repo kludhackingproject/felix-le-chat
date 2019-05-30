@@ -1,67 +1,36 @@
 # README
 
-## Protocole du soir 
+##  E-boutique réalisée par :
 
-```
-$ git checkout dev-tonnom
-```
+* Drieli Luz / @Dri
 
- ### => #Branch DEV-TONNOM
-```
-$ git merge [les branches perso de travail de ta journée]
-```
-```
-$ git push origin dev-tonnom
-```
-```
-$ git checkout development
-```
+* Lucas Piquet / @Lucas Piquet
 
-### => #Branch DEVELOPMENT
-```
-$ git merge dev-tonnom
-```
-```
-$ git push origin development
-```
-```
-$ git checkout master
-```
+* Antoine Jacques / @Tonio
 
-### => #Branch MASTER
-```
-$ git merge development
-```
-```
-$ git push origin master
-```
-```
-$ git push heroku master
-```
+* Thibault  / @Thibault Tlz
 
-## Protocole du matin  
+* Vincent Gillibert / @VincentG
 
-```
-$ git checkout master
-```
 
-### => #Branch MASTER  
-```
-$ git pull origin master
-```
-```
-$ git checkout development
-```
 
-### => #Branch DEVELOPMENT 
-```
-$ git merge master
-```
-```
-$ git checkout dev-tonnom
-```
+## Protocole development
 
-### => #Branch DEV-TONNOM
-```
-$ git merge master
-```
+1. Clone the repo
+2. Run bundle install
+3. Run rails db:create
+4. Run rails db:migrate
+5. Run rails db:seed
+6. Run rails server
+7. Connect to http://localhost:3000
+8. Enjoy :)
+
+* Pour créer un nouvel item : http://localhost:3000/items/new
+
+
+## Protocole production
+
+* Application accessible sur à l'URL : https://projet-felix-le-chat.herokuapp.com/
+* Pour créer un nouvel item : https://projet-felix-le-chat.herokuapp.com/items/new
+
+* Problèmes persistants : icones ne sont pas passées (panier dans la navbar + boutons au hover au-dessus des items dans l'index : gauche = détails produit, droite = ajout au panier)
