@@ -86,10 +86,19 @@
 
                     </td>
                     <td>
-                        <div class="checkout_btn_inner d-flex align-items-center">
-                            <a class="gray_btn" href="#">Continuer mes achats</a>
-                            <a class="primary-btn ml-2" href="#">Terminer ma commande</a>
-                        </div>
+                      <div class="checkout_btn_inner d-flex align-items-center">
+												<%= link_to 'Continuer mes achats', root_path, class:"primary-btn ml-2" %>
+
+												<%= form_tag url_for(action: 'create', :controller => 'orders'), method: "post" do %>
+
+												  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+												          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+												          data-description="A month's subscription"
+												          data-amount="<%= @amount %>"
+												          data-locale="eur">
+												  </script>
+												<% end %>
+                      </div>
                     </td>
                 </tr>
             </tbody>
