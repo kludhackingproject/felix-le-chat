@@ -71,7 +71,7 @@ button.stripe-button-el span {
 }
 
 .hero-banner {
-  background-image: url('cat-band.jpg');
+  background-image: url('/assets/cat-band.jpg');
   background-repeat: no-repeat;
   background-size: 100% auto;
   color: #fff;
