@@ -2,12 +2,7 @@
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Page profil</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Informations utlisateur</a></li>
-            </ol>
-          </nav>
+					<h1>Mes commandes</h1>
 				</div>
 			</div>
     </div>
@@ -18,7 +13,7 @@
       <div class="row mb-5">
         <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
           <div class="confirmation-card">
-            <h3 class="billing-title">Nom complet</h3>
+            <h3 class="billing-title"><b>Nom complet</b></h3>
             <table class="order-rable">
               <tbody><tr>
                 <td><%= @user.first_name %> <%= @user.last_name %></td>
@@ -28,7 +23,7 @@
         </div>
         <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
           <div class="confirmation-card">
-            <h3 class="billing-title">Description</h3>
+            <h3 class="billing-title"><b>Description</b></h3>
             <table class="order-rable">
               <tbody><tr>
                 <td><%= @user.description %></td>
@@ -38,7 +33,7 @@
         </div>
         <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
           <div class="confirmation-card">
-            <h3 class="billing-title">Email</h3>
+            <h3 class="billing-title"><b>Email</b></h3>
             <table class="order-rable">
               <tbody><tr>
                 <td><%= @user.email %></td>
@@ -46,16 +41,23 @@
             </tbody></table>
           </div>
         </div>
+				<div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+
+				</div>
       </div>
 
-    <div class="container">
-      <%= link_to 'Editer le profil', edit_user_registration_path, class:"button button-hero" %>
-    </div>
+			<div class="container">
+	      <div class="row mb-5">
+					<div class="col-xl-12 text-center">
+	      		<%= link_to 'Editer le profil', edit_user_registration_path, class:"button button-hero" %>
+					</div>
+				</div>
+	    </div>
 
 
 
       <div class="order_details_table">
-        <h2>Commandes passées</h2>
+        <h2><b>Commandes passées</b></h2>
         <div class="table-responsive">
           <table class="table">
             <thead>
@@ -76,7 +78,7 @@
 	                  <h5>x 01</h5>
 	                </td>
 	                <td>
-	                  <p><%= @user_cart.sub_total %> €</p>
+	                  <p><%= order.sub_total %> €</p>
 	                </td>
 	              </tr>
 	            </tbody>

@@ -1,3 +1,5 @@
+<%= devise_error_messages! %>
+
 <section class="login_box_area section-margin">
     <div class="container">
       <div class="row">
@@ -16,32 +18,31 @@
           <div class="login_form_inner register_form_inner">
             <h3>Modifier <%= resource_name.to_s.humanize %></h3>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
 
               <div class="col-md-12 form-group">
-                <%= f.text_field :first_name, autocomplete: "off", placeholder:"Nouveau prénom" %>
+                <%= f.text_field :first_name, placeholder:"Nouveau prénom" %>
                </div>
               <div class="col-md-12 form-group">
-                <%= f.text_field :last_name, autocomplete: "off", placeholder:"Nouveau nom" %>
+                <%= f.text_field :last_name, placeholder:"Nouveau nom" %>
                </div>
               <div class="col-md-12 form-group">
-                <%= f.text_field :description, autocomplete: "off", placeholder:"Nouvelle description" %>
-               </div>
-              <div class="col-md-12 form-group">
-                <%= f.password_field :current_password, autofocus: true, autocomplete: "off", placeholder:"Ancien mot de passe" %>
+                <%= f.text_field :description, placeholder:"Nouvelle description" %>
                </div>
                <div class="col-md-12 form-group">
-                <%= f.email_field :email, autofocus: true, autocomplete: "off", placeholder:"Adresse email" %>
+                <%= f.email_field :email, placeholder:"Adresse email" %>
               </div>
+              <div class="col-md-12 form-group">
+                <%= f.password_field :current_password, placeholder:"Mot de passe" %>
+               </div>
               <div class="field">
-                <%= f.password_field :password, autocomplete: "off", placeholder: "Nouveau mot de passe" %><br />
-                <i>(ne pas remplir si vous ne voulez pas le changer)</i><br />
+                <%= f.password_field :password, placeholder: "Nouveau mot de passe" %>
                 <% if @minimum_password_length %>
-                  <em><%= @minimum_password_length %> caractères minimum</em><br /><br />
+                  <br /><em><%= @minimum_password_length %> caractères minimum</em><br />
                 <% end %>
               </div>
               <div class="col-md-12 form-group">
-                <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Nouveau mot de passe" %>
+                <%= f.password_field :password_confirmation, placeholder: "Confirmer nouv. mdp." %><br />
+                <i>(vide : pas de modifications)</i><br />
               </div>
               <div class="col-md-12 form-group">
                 <%= f.submit "Mettre à jour", class: "button button-login w-100" %>

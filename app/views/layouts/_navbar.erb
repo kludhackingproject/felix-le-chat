@@ -1,0 +1,44 @@
+<header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <%= link_to image_tag("logo.png"), root_path, class: 'navbar-brand logo_h' %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+              <li class="nav-item"><%= link_to 'Shop', root_path, class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to 'Contact', contact_index_path, class: 'nav-link' %></li>
+
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Profil</a>
+                <ul class="dropdown-menu">
+                  <% if current_user %>
+                    <li class="nav-item"><%= link_to 'Mes commandes', profile_path(:id => current_user.id), class: 'nav-link' %></li>
+                    <li class="nav-item"><%= link_to 'Editer mon profil', edit_user_registration_path, class: 'nav-link' %></li>
+                    <li class="nav-item"><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+                  <% else %>
+                    <li class="nav-item"><%= link_to "Créer un compte", new_user_registration_path, class: 'nav-link' %></li>
+                    <li class="nav-item"><%= link_to "Se connecter", new_user_session_path, class: 'nav-link' %></li>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+
+            <ul class="nav-shop">
+              <% if user_signed_in? %>
+                <li class="nav-item"><button><%= link_to "<i class='ti-shopping-cart'></i><span class='nav-shop__circle'>#{current_cart.items.length}</span>".html_safe, cart_path(:id => cart_id) %></button></li>
+              <% else %>
+                <li class="nav-item"><button><%= link_to '<i class="ti-shopping-cart"></i><span class="nav-shop__circle">0</span>'.html_safe, new_user_session_path %></button></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
