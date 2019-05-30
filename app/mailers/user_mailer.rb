@@ -19,8 +19,11 @@ class UserMailer < ApplicationMailer
       mail(to: @user.email, subject: 'La commande a été reçue')
     end
 
-    #def welcome_recap
-    # @user = user
-     # mail(to: @user.last.email, subject: "#{@user.first_name} #{@user.last_name} s'est inscrit")
-   # end
+    def order_recap(admin)
+    
+    @admin = admin
+    @order = admin.orders.last
+    
+    mail(to: @admin.email, subject: "nouvelle commande YEAHH")
+   end
 end
