@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	root 'items#index'
@@ -8,7 +9,6 @@ Rails.application.routes.draw do
   resources :destroy_cart_items, only: [:destroy, :create]
   resources :profiles, only: [:show]
   resources :charges
-
-
+  resources :contact, only: [:index]
 
 end
