@@ -33,17 +33,11 @@
             <li><a href="#"><span>Availibility</span> : In Stock</a></li>
           </ul>
           <p> <%= @item.description %> </p>
-<<<<<<< HEAD
-
-        <div class="checkout_btn_inner d-flex align-items-center">
-            <%= link_to 'Ajouter au panier', destroy_cart_items_path, method: "CREATE", class:"button primary-btn" %>   
-=======
           <div class="product_count">
             <label for="qty">Quantity:</label>
             <input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
             <%= link_to 'Add to Cart', destroy_cart_items_path(:id => @item.id),  class:"button primary-btn", data: {:method => "create"} %>
           </div>
->>>>>>> development
         </div>
       </div>
     </div>
