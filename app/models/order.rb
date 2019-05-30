@@ -12,7 +12,15 @@ class Order < ApplicationRecord
   # Envoyer un e-mail à l'utilisateur lors de la validation d'une commande
 
   def order_send
-    UserMailer.order_confirmation(self).deliver
+    UserMailer.order_confirmation(self).deliver_now
+  end
+  
+  def sub_total
+    sum = 0
+    self.items.each do |item|
+      sum += item.price
+    end
+    return sum
   end
   
 end
