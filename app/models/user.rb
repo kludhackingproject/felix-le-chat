@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :create_cart, :welcome_send, :admin_send
+  after_create :create_cart, :welcome_send#, :admin_send
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -27,7 +27,7 @@ class User < ApplicationRecord
   end
 
    # Envoyer un e-mail à l'admin lors de la création de son compte
-  def admin_send
-    UserMailer.welcome_recap(self).deliver_now
-  end
+  #def admin_send
+  #  UserMailer.welcome_recap(self).deliver_now
+  #end
 end
