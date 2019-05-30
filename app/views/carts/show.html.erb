@@ -25,7 +25,7 @@
               <tr>
                   <th scope="col">Produit</th>
                   <th scope="col">Catégorie</th>
-                  <th scope="col">Supprimer du panier</th>
+                  <th scope="col"> </th>
                   <th scope="col">Total</th>
               </tr>
             </thead>
@@ -35,9 +35,15 @@
                 <tr>
                   <td>
                   	<div class="media">
+<<<<<<< HEAD
                       <!-- <div class="d-flex"> -->
                            <!-- <img src="img/cart/cart1.png" alt=""> -->
                         <!-- </div> -->
+=======
+                      <div class="d-flex">
+                          <img src="#" alt="">
+                      </div>
+>>>>>>> 656409df1a88aa88047409260fec137190f5afda
                       <div class="media-body">
                           <p><%= item.title %></p>
                       </div>
@@ -94,6 +100,7 @@
 												  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 												          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 												          data-description="A month's subscription"
+																	data-label="Procéder au paiement"
 												          data-amount="<%= @amount %>"
 												          data-locale="eur">
 												  </script>

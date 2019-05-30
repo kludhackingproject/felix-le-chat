@@ -1,48 +1,35 @@
-
-
-  <div class="product_image_area">
+<div class="product_image_area">
   <div class="container">
     <div class="row s_product_inner">
       <div class="col-lg-6">
         <div class="owl-carousel owl-theme s_Product_carousel owl-loaded owl-drag">
-          
-          <!-- <div class="single-prd-item">
-            <%= image_tag "Cat_picture.jpg", class:"img-fluid", alt:"" %>
-          </div>
-          <div class="single-prd-item">
-          <%= image_tag "Cat_picture.jpg", class:"img-fluid", alt:"" %>
-          </div> -->
+          <% if @item.photo.attached? %>
+                  <%= image_tag @item.photo, alt: 'item photo', class: "card-img"  %>
+                <% else %>
+                  <%= image_tag "item/cat2.png", alt: 'cat head', class: "card-img" %>
+                <% end %>  
         <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1080px, 0px, 0px); transition: all 0s ease 0s; width: 2700px;"><div class="owl-item cloned" style="width: 540px;"><div class="single-prd-item">
-        <%= image_tag "Cat_picture.jpg", class:"img-fluid", alt:"" %>
-          </div></div><div class="owl-item cloned" style="width: 540px;"><div class="single-prd-item">
-           <%= image_tag "Cat_picture.jpg", class:"img-fluid", alt:"" %>
-          </div></div><div class="owl-item active" style="width: 540px;"><div class="single-prd-item">
-           <%= image_tag "Cat_picture.jpg", class:"img-fluid", alt:"" %>
-          </div></div><div class="owl-item cloned" style="width: 540px;"><div class="single-prd-item">
-           <%= image_tag "Cat_picture.jpg", class:"img-fluid", alt:"" %>
-          </div></div><div class="owl-item cloned" style="width: 540px;"><div class="single-prd-item">
-           <%= image_tag "Cat_picture.jpg", class:"img-fluid", alt:"" %>
+      
           </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
       </div>
+      
       <div class="col-lg-5 offset-lg-1">
         <div class="s_product_text">
           <h3> <%= @item.title%> </h3>
           <h2> <%= @item.price%>€</h2>
           <ul class="list">
-            <li><a class="active" href="#"><span>Category</span> : SuperCat</a></li>
-            <li><a href="#"><span>Availibility</span> : In Stock</a></li>
+            <li><i>Catégorie : SuperCat</i></li>
+            <li><i>Disponibilité : En stock</i></li>
           </ul>
           <p> <%= @item.description %> </p>
-          <div class="product_count">
-            <label for="qty">Quantity:</label>
-            <input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-            <%= link_to 'Add to Cart', destroy_cart_items_path(:id => @item.id),  class:"button primary-btn", data: {:method => "create"} %>
+          <% if current_user %>
+            <%= link_to 'Ajouter au panier', destroy_cart_items_path(:id => @item.id),  class:"button primary-btn", data: {:method => "create"} %>
+          <% else %>
+            <%= link_to 'Ajouter au panier', new_user_session_path,  class:"button primary-btn" %>
+          <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-

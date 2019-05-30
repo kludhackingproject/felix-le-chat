@@ -10,9 +10,10 @@ gem 'better_errors'
 gem 'letter_opener'
 gem 'stripe'
 gem 'devise'
+gem 'mailjet'
+gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'dotenv-rails'
 gem 'aws-sdk-s3'
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

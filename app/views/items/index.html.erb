@@ -1,5 +1,3 @@
-
-
 <main class="site-main">
    <!--================ Hero banner start =================-->
     <section class="hero-banner">
@@ -7,16 +5,14 @@
         <div class="row no-gutters align-items-center pt-60px">
           <div class="col-5 d-none d-sm-block">
             <div class="hero-banner__img">
-              <%= image_tag("item/cat.png") %>
-              <!-- <img class="img-fluid" src="img/home/hero-banner.png" alt=""> -->
+              <%= image_tag("cat-band-2.jpg", class: "img-fluid") %>
             </div>
           </div>
           <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
             <div class="hero-banner__content">
-              <h4>Félix le Chat</h4>
-              <h1>All types of cat photos</h1>
-              <p>Find many different cat photos available for purchase: cute, funny, kittens, grumpy cat, nyan cat, keyboard cat & more!</p>
-              <a class="button button-hero" href="#">Browse photos</a>
+              <h1>Félix le Chat</h1>
+              <p>Retrouvez de nombreuses photos de chats disponibles à l'achat: mignons, drôles, chatons, chat grincheux, chat nyan, chat à clavier...</p>
+              <a class="button button-hero" href="#Content">See photos</a>
             </div>
           </div>
         </div>
@@ -24,17 +20,16 @@
     </section>
     <!--================ Hero banner start =================-->
 
-   
-    <!-- ================ trending product section start ================= -->  
-   <section class="section-margin calc-60px">
+
+    <!-- ================ trending product section start ================= -->
+   <section class="section-margin calc-60px" id="Content">
       <div class="container">
         <div class="section-intro pb-60px">
-          <p>Popular cat photos</p>
-          <h2>Trending <span class="section-intro__style">Photos</span></h2>
+          <h2>Photos <span class="section-intro__style">tendances</span></h2>
         </div>
 
         <div class="row">
-        <% @items.each do |item| %>	
+        <% @items.each do |item| %>
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card text-center card-product">
               <div class="card-product__img">
@@ -43,25 +38,25 @@
                 <% else %>
                   <%= image_tag "item/cat2.png", alt: 'cat head', class: "card-img" %>
                 <% end %>
-                <!-- <%= image_tag "item/cat2.png", alt: 'cat head', class: "card-img" %> -->
                 <ul class="card-product__imgOverlay">
-                  <li><button><%= link_to '<i class="ti-search"></i>'.html_safe, item_path(item.id) %></button></li>
-                  <li><button><%= link_to '<i class="ti-shopping-cart"></i>'.html_safe,  destroy_cart_items_path(:id => item.id), data: {:method => "create"} %></button></li>
+                  <li><%= link_to '<button><i class="ti-search"></i></button>'.html_safe, item_path(item.id) %></li>
+                  <% if current_user %>
+                    <li><%= link_to '<button><i class="ti-shopping-cart"></i></button>'.html_safe,  destroy_cart_items_path(:id => item.id), data: {:method => "create"} %></li>
+                  <% else %>
+                    <li><%= link_to '<button><i class="ti-shopping-cart"></i></button>'.html_safe,  new_user_session_path %></li>
+                  <% end %>
                 </ul>
               </div>
               <div class="card-body">
-                <p class="card-product__price">id: <%= item.id %></p>
                 <h4 class="card-product__title"><%= link_to item.title, item_path(item.id) %></h4>
                 <p class="card-product__price">$<%= item.price %></p>
               </div>
             </div>
           </div> <!-- end of class col md 6... -->
-         
+
         <% end %>
         </div> <!-- end of the row -->
       </div>
     </section>
 
-   
   </main>
-

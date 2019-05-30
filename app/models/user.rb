@@ -26,8 +26,12 @@ class User < ApplicationRecord
     Cart.create(user_id: self.id)
   end
 
+  extend FriendlyId
+  friendly_id :last_name, use: :slugged
+
    # Envoyer un e-mail à l'admin lors de la création de son compte
   #def admin_send
   #  UserMailer.welcome_recap(self).deliver_now
   #end
+  
 end
