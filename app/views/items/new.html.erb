@@ -1,0 +1,19 @@
+<div class="content row justify-content-md-center">
+  <div class="card col-lg-6">
+    <div class="card-body">
+  <h1 class="mb-3">Ajouter un item</h1>
+
+  <%= form_tag url_for(action: 'create'), method: "post", multipart: true do %>
+    <div class="form-group">
+          <%= label_tag 'Image :'%>
+          <%= file_field_tag :photo %>
+          <%= text_field_tag 'title', @item.title, class: "form-control mb-1", placeholder: "Titre" %>
+          <%= text_field_tag 'price', @item.price, class: "form-control mb-1", placeholder: "Prix" %>
+          <%= text_field_tag 'image_url', @item.image_url, class: "form-control mb-1", placeholder: "image_url" %>
+          <br />
+          <%= submit_tag "Ajouter un item", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+</div>
+ 

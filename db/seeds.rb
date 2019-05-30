@@ -39,7 +39,7 @@ puts "Creating Items"
         title: Faker::FunnyName.name,
         description: Faker::TvShows::HowIMetYourMother.quote,
         price: Faker::Commerce.price(range = 0..100.0, as_string = true),
-        Rails.root.join("app/assets/images/Cat_picture.jpg").open
+        image_url: Rails.root.join("app/assets/images/Cat_picture.jpg").open
     )
 end
 puts "done"

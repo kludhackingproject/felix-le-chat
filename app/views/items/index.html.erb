@@ -38,14 +38,19 @@
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card text-center card-product">
               <div class="card-product__img">
-                <%= image_tag "item/cat2.png", alt: 'cat head', class: "card-img" %>
+                <% if item.photo.attached? %>
+                  <%= image_tag item.photo, alt: 'item photo', class: "card-img"  %>
+                <% else %>
+                  <%= image_tag "item/cat2.png", alt: 'cat head', class: "card-img" %>
+                <% end %>
+                <!-- <%= image_tag "item/cat2.png", alt: 'cat head', class: "card-img" %> -->
                 <ul class="card-product__imgOverlay">
                   <li><button><%= link_to '<i class="ti-search"></i>'.html_safe, item_path(item.id) %></button></li>
-                  <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>
                 </ul>
               </div>
               <div class="card-body">
+                <p class="card-product__price">id: <%= item.id %></p>
                 <h4 class="card-product__title"><%= link_to item.title, item_path(item.id) %></h4>
                 <p class="card-product__price">$<%= item.price %></p>
               </div>
