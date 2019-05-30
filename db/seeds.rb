@@ -44,21 +44,21 @@ puts "Creating Items"
 end
 puts "done"
 
+#Création des Cart
+puts "Creating CartS"
+40.times do 
+    Cart.create(
+        user_id: User.all.sample.id
+    )
+end
+puts "done"
+
 #Création des Orders
 puts "Creating Orders"
 20.times do 
     Order.create(
         user_id: User.all.sample.id,
         stripe_token: Faker::FunnyName.name
-    )
-end
-puts "done"
-
-#Création des Cart
-puts "Creating CartS"
-40.times do 
-    Cart.create(
-        user_id: User.all.sample.id
     )
 end
 puts "done"
