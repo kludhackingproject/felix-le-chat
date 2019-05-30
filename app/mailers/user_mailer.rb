@@ -12,10 +12,10 @@ class UserMailer < ApplicationMailer
       mail(to: @user.email, subject: 'Bienvenue chez Felix Le Chat !') 
     end
     
-    def order_confirmation(order)
+    def order_confirmation(user)
       
-      @order = order
-      mail(to: @order.user.email, subject: 'La commande a été reçue')
+      @user = user 
+      mail(to: @user.email, subject: 'La commande a été reçue')
     end
 
     #def welcome_recap
