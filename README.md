@@ -16,14 +16,14 @@
 
 ## Protocole development
 
-* 1 - Clone the repo
-* 2 - Run bundle install
-* 3 - Run rails db:create
-* 4 - Run rails db:migrate
-* 5 - Run rails db:seed
-* 6 - Run rails server
-* 7 - Connect to http://localhost:3000
-* 8 - Enjoy :)
+1.- Clone the repo
+2. - Run bundle install
+3. - Run rails db:create
+4. - Run rails db:migrate
+5. - Run rails db:seed
+6. - Run rails server
+7. - Connect to http://localhost:3000
+8. - Enjoy :)
 
 * Pour créer un nouvel item : https://projet-felix-le-chat.herokuapp.com/items/new
 
@@ -34,74 +34,3 @@
 * Pour créer un nouvel item : https://projet-felix-le-chat.herokuapp.com/items/new
 
 * Problèmes persistants : icones ne sont pas passées (panier dans la navbar + boutons au hover au-dessus des items dans l'index : gauche = détails produit, droite = ajout au panier)
-
-
-
-=====================================================================================
-
-
-## Protocole du soir 
-
-```
-$ git checkout dev-tonnom
-```
-
- ### => #Branch DEV-TONNOM
-```
-$ git merge [les branches perso de travail de ta journée]
-```
-```
-$ git push origin dev-tonnom
-```
-```
-$ git checkout development
-```
-
-### => #Branch DEVELOPMENT
-```
-$ git merge dev-tonnom
-```
-```
-$ git push origin development
-```
-```
-$ git checkout master
-```
-
-### => #Branch MASTER
-```
-$ git merge development
-```
-```
-$ git push origin master
-```
-```
-$ git push heroku master
-```
-
-## Protocole du matin  
-
-```
-$ git checkout master
-```
-
-### => #Branch MASTER  
-```
-$ git pull origin master
-```
-```
-$ git checkout development
-```
-
-### => #Branch DEVELOPMENT 
-```
-$ git merge master
-```
-```
-$ git checkout dev-tonnom
-```
-
-### => #Branch DEV-TONNOM
-```
-$ git merge master
-```
