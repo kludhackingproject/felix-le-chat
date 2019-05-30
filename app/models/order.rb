@@ -23,8 +23,8 @@ class Order < ApplicationRecord
     return sum
   end
 
-  def order_send
-    UserMailer.order_confirmation(self).deliver
-  end
+  #def order_send
+   # UserMailer.order_confirmation(self).deliver
+  # end
   
 end
