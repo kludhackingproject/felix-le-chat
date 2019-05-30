@@ -10,12 +10,8 @@ gem 'better_errors'
 gem 'letter_opener'
 gem 'stripe'
 gem 'devise'
-<<<<<<< HEAD
-gem 'aws-sdk-s3', require: false
-gem 'mailjet'
-=======
 gem 'dotenv-rails'
->>>>>>> dev-antoine
+gem 'aws-sdk-s3'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
