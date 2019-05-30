@@ -25,4 +25,9 @@ class User < ApplicationRecord
   def create_cart
     Cart.create(user_id: self.id)
   end
+
+   # Envoyer un e-mail à l'admin lors de la création de son compte
+  #def admin_send
+  #  UserMailer.welcome_recap(self).deliver_now
+  #end
 end
