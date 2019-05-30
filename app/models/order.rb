@@ -13,11 +13,7 @@ class Order < ApplicationRecord
   # Envoyer un e-mail à l'utilisateur lors de la validation d'une commande
 
   #def order_send
-<<<<<<< HEAD
   #  UserMailer.order_confirmation(self).deliver_now
-  #end
-=======
-   # UserMailer.order_confirmation(self).deliver
   #end
 
    def sub_total
@@ -31,6 +27,5 @@ class Order < ApplicationRecord
   def order_send
     UserMailer.order_confirmation(self).deliver
   end
->>>>>>> 656409df1a88aa88047409260fec137190f5afda
   
 end
