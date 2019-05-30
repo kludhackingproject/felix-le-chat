@@ -25,7 +25,7 @@
 7. Connect to http://localhost:3000
 8. Enjoy :)
 
-* Pour créer un nouvel item : https://projet-felix-le-chat.herokuapp.com/items/new
+* Pour créer un nouvel item : http://localhost:3000/items/new
 
 
 ## Protocole production
