@@ -16,14 +16,14 @@
 
 ## Protocole development
 
-*1 - Clone the repo
-*2 - Run bundle install
-*3 - Run rails db:create
-*4 - Run rails db:migrate
-*5 - Run rails db:seed
-*6 - Run rails server
-*7 - Connect to http://localhost:3000
-*8 - Enjoy :)
+* 1 - Clone the repo
+* 2 - Run bundle install
+* 3 - Run rails db:create
+* 4 - Run rails db:migrate
+* 5 - Run rails db:seed
+* 6 - Run rails server
+* 7 - Connect to http://localhost:3000
+* 8 - Enjoy :)
 
 * Pour créer un nouvel item : https://projet-felix-le-chat.herokuapp.com/items/new
 
