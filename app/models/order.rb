@@ -2,6 +2,7 @@ class Order < ApplicationRecord
     #after_create :order_send
 
     belongs_to :user
+    belongs_to :cart
     has_many :join_table_order_items
     has_many :items, through: :join_table_order_items
 
@@ -14,4 +15,13 @@ class Order < ApplicationRecord
   #def order_send
    # UserMailer.order_confirmation(self).deliver
   #end
+
+  def sub_total
+    sum = 0
+    self.items.each do |item|
+      sum += item.price
+    end
+    return sum
+  end
+  
 end

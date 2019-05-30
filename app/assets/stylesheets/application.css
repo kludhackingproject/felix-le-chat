@@ -32,3 +32,12 @@
 .button-center {
 	display: inline-block;
 }
+
+
+/*flash*/
+.alert{
+    margin-left: 450px;
+    margin-right: 450px;
+    text-align: center;
+    background-color: #ffffff;
+}

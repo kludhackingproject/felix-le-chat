@@ -42,11 +42,12 @@ class OrdersController < ApplicationController
           JoinTableOrderItem.create(order_id: @order.id, item_id: item.id)
         end
         current_cart_array.destroy_all
-        flash[:success] = "Commande validée. Vous allez recevoir un email de confirmation"
         redirect_to root_path
+        flash[:success] = "Commande validée !"
       else
         # sinon, il render la view new (qui est celle sur laquelle on est déjà)
         redirect_to cart_path(:id => cart_id)
+        flash[:danger] = "Commande refusée"
       end
     end
 
