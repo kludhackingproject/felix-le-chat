@@ -34,7 +34,7 @@ puts "done"
 
 #Création des Items
 puts "Creating Items"
-2.times do 
+20.times do 
     Item.create(
         title: Faker::FunnyName.name,
         description: Faker::TvShows::HowIMetYourMother.quote,
