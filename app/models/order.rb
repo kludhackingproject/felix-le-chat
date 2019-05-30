@@ -15,12 +15,4 @@ class Order < ApplicationRecord
     UserMailer.order_confirmation(self).deliver_now
   end
   
-  def sub_total
-    sum = 0
-    self.items.each do |item|
-      sum += item.price
-    end
-    return sum
-  end
-  
 end
