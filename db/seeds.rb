@@ -48,7 +48,8 @@ puts "done"
 puts "Creating Orders"
 20.times do 
     Order.create(
-        user_id: User.all.sample.id
+        user_id: User.all.sample.id,
+        stripe_token: Faker::FunnyName.name
     )
 end
 puts "done"
