@@ -18,4 +18,3 @@ module Felix
   end
 end
 
-config.action_mailer.delivery_method = :mailjet
