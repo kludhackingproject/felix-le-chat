@@ -25,4 +25,8 @@ class User < ApplicationRecord
   def create_cart
     Cart.create(user_id: self.id)
   end
+
+  extend FriendlyId
+  friendly_id :last_name, use: :slugged
+
 end
