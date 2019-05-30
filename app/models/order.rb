@@ -8,7 +8,7 @@ class Order < ApplicationRecord
     validates :user_id, presence: true
     validates :stripe_token, presence: true
 
-    
+
   # Envoyer un e-mail à l'utilisateur lors de la validation d'une commande
   
   def order_send
@@ -30,5 +30,4 @@ class Order < ApplicationRecord
     return sum
   end
 
-  
 end
