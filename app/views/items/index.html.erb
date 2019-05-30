@@ -36,13 +36,12 @@
                 <% else %>
                   <%= image_tag "item/cat2.png", alt: 'cat head', class: "card-img" %>
                 <% end %>
-                <!-- <%= image_tag "item/cat2.png", alt: 'cat head', class: "card-img" %> -->
                 <ul class="card-product__imgOverlay">
-                  <li><button><%= link_to '<i class="ti-search"></i>'.html_safe, item_path(item.id) %></button></li>
+                  <li><%= link_to '<button><i class="ti-search"></i></button>'.html_safe, item_path(item.id) %></li>
                   <% if current_user %>
-                    <li><button><%= link_to '<i class="ti-shopping-cart"></i>'.html_safe,  destroy_cart_items_path(:id => item.id), data: {:method => "create"} %></button></li>
+                    <li><%= link_to '<button><i class="ti-shopping-cart"></i></button>'.html_safe,  destroy_cart_items_path(:id => item.id), data: {:method => "create"} %></li>
                   <% else %>
-                  <li><button><%= link_to '<i class="ti-shopping-cart"></i>'.html_safe,  new_user_session_path %></button></li>
+                    <li><%= link_to '<button><i class="ti-shopping-cart"></i></button>'.html_safe,  new_user_session_path %></li>
                   <% end %>
                 </ul>
               </div>
