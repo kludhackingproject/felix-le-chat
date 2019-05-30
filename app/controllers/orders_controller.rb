@@ -43,9 +43,11 @@ class OrdersController < ApplicationController
         end
         current_cart_array.destroy_all
         redirect_to root_path
+        flash[:success] = "Commande validée !"
       else
         # sinon, il render la view new (qui est celle sur laquelle on est déjà)
         redirect_to cart_path(:id => cart_id)
+        flash[:danger] = "Commande refusée"
       end
     end
 

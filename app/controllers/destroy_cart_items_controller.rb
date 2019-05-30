@@ -4,6 +4,7 @@ class DestroyCartItemsController < ApplicationController
     @cart = Cart.find(cart_id)
     @cart.items << Item.find(params[:id])
     redirect_to root_path
+    flash[:success] = "Photo ajoutée au panier"
   end
 
 
