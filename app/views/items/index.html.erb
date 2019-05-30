@@ -16,7 +16,7 @@
               <h4>Félix le Chat</h4>
               <h1>All types of cat photos</h1>
               <p>Find many different cat photos available for purchase: cute, funny, kittens, grumpy cat, nyan cat, keyboard cat & more!</p>
-              <a class="button button-hero" href="#">Browse photos</a>
+              <a class="button button-hero" href="#Content">See photos</a>
             </div>
           </div>
         </div>
@@ -26,7 +26,7 @@
 
    
     <!-- ================ trending product section start ================= -->  
-   <section class="section-margin calc-60px">
+   <section class="section-margin calc-60px" id="Content">
       <div class="container">
         <div class="section-intro pb-60px">
           <p>Popular cat photos</p>
@@ -47,6 +47,7 @@
                 <ul class="card-product__imgOverlay">
                   <li><button><%= link_to '<i class="ti-search"></i>'.html_safe, item_path(item.id) %></button></li>
                   <li><button><%= link_to '<i class="ti-shopping-cart"></i>'.html_safe,  destroy_cart_items_path(:id => item.id), data: {:method => "create"} %></button></li>
+                  <!-- <li><button><%= link_to 'Delete', item_path(item.id), method: :delete, data: { confirm: 'Are you sure' } %></button></li> -->
                 </ul>
               </div>
               <div class="card-body">
@@ -64,4 +65,3 @@
 
    
   </main>
-

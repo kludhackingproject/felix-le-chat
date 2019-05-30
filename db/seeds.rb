@@ -33,16 +33,16 @@ end
 puts "done"
 
 #Création des Items
-puts "Creating Items"
-20.times do 
-    Item.create(
-        title: Faker::FunnyName.name,
-        description: Faker::TvShows::HowIMetYourMother.quote,
-        price: Faker::Commerce.price(range = 0..100.0, as_string = true),
-        image_url: Rails.root.join("app/assets/images/Cat_picture.jpg").open
-    )
-end
-puts "done"
+#puts "Creating Items"
+#2.times do 
+#    Item.create(
+#        title: Faker::FunnyName.name,
+#        description: Faker::TvShows::HowIMetYourMother.quote,
+#        price: Faker::Commerce.price(range = 0..100.0, as_string = true),
+#        image_url: Rails.root.join("app/assets/images/Cat_picture.jpg").open
+#    )
+#end
+#puts "done"
 
 #Création des Orders
 puts "Creating Orders"

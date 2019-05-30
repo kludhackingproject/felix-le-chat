@@ -26,10 +26,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to item_path
   end
 
   def index
-  	@items = Item.all
+  	@items = Item.all.order(:id).reverse
   end
 
   def show
