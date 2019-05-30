@@ -1,2 +1,5 @@
-Un utilisateur s'est inscit chez nous !
-==========================================================
+Un utilisateur vient de s'inscrire chez nous !
+Voici sa commande :
+<% @order.items.each do |item| %>
+Titre : <%= item.title %>, Price : <%= item.price %><
+<% end %>
