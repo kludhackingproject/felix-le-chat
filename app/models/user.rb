@@ -18,11 +18,16 @@ class User < ApplicationRecord
 
   # Envoyer un e-mail à l'utilisateur lors de la création de son compte
   def welcome_send
-    UserMailer.welcome_email(self).deliver_now
+    UserMailer.welcome_email(user_mail: self.mail).deliver_now
   end
   
   # Créer un Cart lors de la création d'un utilisateur
   def create_cart
     Cart.create(user_id: self.id)
+  end
+
+   # Envoyer un e-mail à l'admin lors de la création de son compte
+  def admin_send
+    UserMailer.welcome_recap(self).deliver_now
   end
 end
