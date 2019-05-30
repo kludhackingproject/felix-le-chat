@@ -15,5 +15,4 @@ class DestroyCartItemsController < ApplicationController
     redirect_to cart_path(cart_id)
   end
 
-
 end

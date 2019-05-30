@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
     end
 
     def create
-
       @cart = Cart.find(cart_id)
       @amount_cent = @cart.sub_total
       @amount = @amount_cent * 100

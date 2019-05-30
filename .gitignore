@@ -31,6 +31,3 @@ Gemfile.lock
 
 # Ignore .env
 .env
-
-# Ignore mailjet.rb
-mailjet.rb
