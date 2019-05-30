@@ -16,7 +16,7 @@
 
 ## Protocole development
 
-1.- Clone the repo
+1. - Clone the repo
 2. - Run bundle install
 3. - Run rails db:create
 4. - Run rails db:migrate
