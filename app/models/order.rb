@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-    after_create :order_send
+   # after_create :order_send
 
     belongs_to :user
     has_many :join_table_order_items
@@ -22,9 +22,5 @@ class Order < ApplicationRecord
       end
     return sum
   end
-
-  #def order_send
-   # UserMailer.order_confirmation(self).deliver
-  # end
   
 end
