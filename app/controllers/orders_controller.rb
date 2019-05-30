@@ -11,12 +11,7 @@ class OrdersController < ApplicationController
     end
 
     def create
-<<<<<<< HEAD
-        @order = Order.create(user_id: current_user.id)
-        current_cart = Cart.find(cart_id).items
-        current_cart.each do |item|
-            JoinTableOrderItem.create(order_id: @order.id, item_id: item.id)
-=======
+
       @cart = Cart.find(cart_id)
       @amount_cent = @cart.sub_total
       @amount = @amount_cent * 100
@@ -46,7 +41,6 @@ class OrdersController < ApplicationController
         # si ça marche, il redirige vers la page d'index du site
         current_cart_array.each do |item|
           JoinTableOrderItem.create(order_id: @order.id, item_id: item.id)
->>>>>>> development
         end
         current_cart_array.destroy_all
         redirect_to root_path
