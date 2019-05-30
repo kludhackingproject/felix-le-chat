@@ -11,11 +11,11 @@ class UserMailer < ApplicationMailer
       #c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
       mail(to: @user.email, subject: 'Bienvenue chez Felix Le Chat !') 
     end
-
-   # def order_confirmation(order)
-    #    @order = order
-     #   mail(to: @order.email, subject: 'La commande a été reçue')
-    # end
+    
+    def order_confirmation
+      
+      mail(to: @current_user.email, subject: 'La commande a été reçue')
+    end
 
     #def welcome_recap
     # @user = user
