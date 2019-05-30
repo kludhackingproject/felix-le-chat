@@ -22,7 +22,7 @@ class UserMailer < ApplicationMailer
     def order_recap(admin)
     
     @admin = admin
-    @order = admin.orders.last
+    @order = @admin.orders.last
     
     mail(to: @admin.email, subject: "nouvelle commande YEAHH")
    end
