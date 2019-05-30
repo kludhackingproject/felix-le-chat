@@ -13,11 +13,14 @@ class CartsController < ApplicationController
 # panier avec tous les items, lié au user_id
   def show
     @cart = Cart.find(cart_id)
+
+    @amount = @cart.sub_total * 100
+
     @cart_items = @cart.items
   end
 
   def create
-
+    @addingitem = JoinTableCartItem.add(LineItem.new(cart_id: Cart.find(cart_id), item_id: params[:id]))
   end
 
   # cherche l'item dans le panier
@@ -34,16 +37,4 @@ class CartsController < ApplicationController
 # méthode .delete, chercher l'id du produit lié au bouton "supprimer" cliqué
   def update
   end
-
-# calculer le total du panier en additionant le prix des items
-  def calculate_total
-    @cart = Cart.find(params[:id])
-    cart_price = 0
-    # boucle pour incrémenter la valeur de price à chaque item ajouté
-    # chercher le nombre d'items du panier
-    @cart.items.each do |item|
-      cart_price += item.price
-    end
-  end
-
 end

@@ -96,5 +96,8 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   # Defautl send mailer
-  config.action_mailer.default_url_options = { host: 'projet-felix-le-chat.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: ENV['APPNAME'] } 
+
+  #Use MailJet delivery
+  config.action_mailer.delivery_method = :mailjet
 end

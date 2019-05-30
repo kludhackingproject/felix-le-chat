@@ -1,0 +1,88 @@
+<section class="blog-banner-area" id="category">
+		<div class="container h-100">
+			<div class="blog-banner">
+				<div class="text-center">
+					<h1>Page profil</h1>
+					<nav aria-label="breadcrumb" class="banner-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Informations utlisateur</a></li>
+            </ol>
+          </nav>
+				</div>
+			</div>
+    </div>
+</section>
+
+<section class="order_details section-margin--small">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+          <div class="confirmation-card">
+            <h3 class="billing-title">Nom complet</h3>
+            <table class="order-rable">
+              <tbody><tr>
+                <td><%= @user.first_name %> <%= @user.last_name %></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+          <div class="confirmation-card">
+            <h3 class="billing-title">Description</h3>
+            <table class="order-rable">
+              <tbody><tr>
+                <td><%= @user.description %></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+          <div class="confirmation-card">
+            <h3 class="billing-title">Email</h3>
+            <table class="order-rable">
+              <tbody><tr>
+                <td><%= @user.email %></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+
+    <div class="container">
+      <%= link_to 'Editer le profil', edit_user_registration_path, class:"button button-hero" %>
+    </div>
+
+
+
+      <div class="order_details_table">
+        <h2>Commandes passées</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+
+    	       <% @user_orders.each do |order| %>
+	            <tbody>
+	              <tr>
+	                <td>
+	                  <p><%= order.created_at %></p>
+	                </td>
+	                <td>
+	                  <h5>x 01</h5>
+	                </td>
+	                <td>
+	                  <p><%= @user_cart.sub_total %> €</p>
+	                </td>
+	              </tr>
+	            </tbody>
+    		<% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
