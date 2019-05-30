@@ -1,5 +1,6 @@
-Un utilisateur vient de s'inscrire chez nous !
+Un utilisateur vient de passer une commande !
 Voici sa commande :
-<% @order.items.each do |item| %>
-Titre : <%= item.title %>, Price : <%= item.price %>
-<% end %>
+<%= @order.items %>
+<!--- <% @order.items.each do |item| %> -->
+<!--- Titre : <%= item.title %>, Price : <%= item.price %> -->
+<!--- <% end %> -->
