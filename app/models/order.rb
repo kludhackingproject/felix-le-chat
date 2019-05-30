@@ -22,6 +22,7 @@ class Order < ApplicationRecord
         sum += item.price
       end
     return sum
+  end
 
   def order_send
     UserMailer.order_confirmation(self).deliver
